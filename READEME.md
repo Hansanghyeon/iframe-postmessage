@@ -2,7 +2,7 @@
 
 A사이트, B사이트가 있습니다.
 
-A사이트에 B사이트를 iframe을 inline으로 불러왔습니다.
+A사이트에 B사이트를 iframe을 inline으로 불러왔습니다.
 
 A사이트에서 B사이트 iframe으로 setInterval로 postmessage를 전송합니다.
 
@@ -17,3 +17,5 @@ A사이트는 인증정보를 받고 쿠키에 해당 정보를 저장한다음 
 ## 테스트
 
 그래서 페이지 이동이있어도 프레임간의 postmessage 이벤트가 잘받아지나 확인하기위한 데모를 작성합니다.
+
+테스트를 간단하게 하기위해서 `vscode - Live Server` 익스텐션을 사용합니다.

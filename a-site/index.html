@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A사이트</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-500">
+  <h1 class="text-[60px] font-bold">A사이트</h1>
+  <iframe id="b-frame" src="http://127.0.0.1:5500/b-site/index.html" frameborder="0"></iframe>
+  <script>
+    const iframe = document.querySelector('#b-frame')
+    console.log('A사이트 - postmessage 수신준비중')
+    window.addEventListener("message", function({ data: { source, message }}) {
+      if (source === 'b-site') {
+        iframe.contentWindow.postMessage({
+          source: 'a-site',
+          message: `B사이트에서 메세지를 수신받아서 다시 B사이트로 메세지를 보냅니다.`
+        })
+      }
+    })
+    
+    // 지속적으로 메세지보내기
+    function sendMessage(index) {
+      iframe.contentWindow.postMessage({
+        source: 'a-site',
+        message: `A사이트에서 메세지 보냈습니다. (${index})`
+      })
+    }
+
+    let count = 0
+    setInterval(function() {
+      sendMessage(count)
+      count++
+    }, 1000)
+  </script>
+</body>
+</html>
