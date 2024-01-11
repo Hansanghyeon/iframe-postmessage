@@ -19,3 +19,7 @@ A사이트는 인증정보를 받고 쿠키에 해당 정보를 저장한다음 
 그래서 페이지 이동이있어도 프레임간의 postmessage 이벤트가 잘받아지나 확인하기위한 데모를 작성합니다.
 
 테스트를 간단하게 하기위해서 `vscode - Live Server` 익스텐션을 사용합니다.
+
+<img width="1136" alt="image" src="https://github.com/Hansanghyeon/iframe-postmessage/assets/42893446/e431e328-e332-4029-b458-278b56f15d1d">
+
+**페이지 이동을해도 이벤트를 다시 등록하면 문제없이 message를 받을 수 있었습니다.**
